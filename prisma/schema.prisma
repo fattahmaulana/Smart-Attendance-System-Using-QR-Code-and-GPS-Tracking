@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id            String   @id @default(uuid())
+  username      String   @unique
+  password_hash String
+  created_at    DateTime @default(now())
+}
+
+model QrSession {
+  id         String   @id @default(uuid())
+  token      String   @unique
+  created_at DateTime @default(now())
+  expired_at DateTime
+}
+
+model Student {
+  id         String   @id @default(uuid())
+  nis        String   @unique
+  nama_siswa String
+  kelas      String
+  keterangan String?  // Tambahkan tanda tanya (?) agar bersifat opsional
+  status     String?  // Tambahkan tanda tanya (?) agar bersifat opsional
+  created_at DateTime @default(now())
+  attendances Attendance[]
+}
+
+model Attendance {
+  id        String   @id @default(uuid())
+  nis       String
+  student   Student  @relation(fields: [nis], references: [nis])
+  timestamp DateTime @default(now())
+  latitude  Float
+  longitude Float
+  distance  Float
+  status    String   // "VALID" or "INVALID"
+}

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "sourceMap": true,
+    "lib": ["ES2022"]
+  },
+  "include": ["server.ts"],
+  "exclude": ["node_modules", "dist", "vite.config.ts", "src"]
+}
