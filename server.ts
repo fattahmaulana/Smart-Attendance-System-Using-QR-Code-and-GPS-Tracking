@@ -29,8 +29,8 @@ function deg2rad(deg: number) {
 }
 
 // Hardcoded school coordinates
-const SCHOOL_LAT = -6.9998;
-const SCHOOL_LNG = 110.3853;
+const SCHOOL_LAT = -7.0165903;
+const SCHOOL_LNG = 110.3781112;
 const MAX_DISTANCE_M = 50;
 
 async function startServer() {
