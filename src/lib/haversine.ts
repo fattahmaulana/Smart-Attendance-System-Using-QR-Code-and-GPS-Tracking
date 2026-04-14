@@ -27,8 +27,8 @@ function deg2rad(deg: number): number {
 
 // Koordinat sekolah (Hardcoded sesuai permintaan)
 export const SCHOOL_COORDS = {
-  lat: -7.0165903,
-  lng: 110.3781112
+  lat: -7.0170,
+  lng: 110.3972
 };
 
 // Jarak maksimal yang diizinkan (meter)
